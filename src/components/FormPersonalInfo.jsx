@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/generalInfo.css"
+import "../styles/forms.css"
 
 export default function FormPersonalInfo({
   name,
@@ -20,7 +20,9 @@ export default function FormPersonalInfo({
       <form onSubmit={saveData}>
         <fieldset>
           <legend>General Information</legend>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">
+            Name <span className="required">*</span>
+          </label>
           <input
             type="text"
             value={name}
@@ -29,7 +31,9 @@ export default function FormPersonalInfo({
             disabled={editable}
             placeholder="Your Name"
           />
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">
+            Email <span className="required">*</span>
+          </label>
           <input
             type="email"
             value={email}
@@ -38,7 +42,9 @@ export default function FormPersonalInfo({
             disabled={editable}
             placeholder="Email"
           />
-          <label htmlFor="phone">Phone:</label>
+          <label htmlFor="phone">
+            Phone <span className="required">*</span>
+          </label>
           <input
             type="number"
             value={phone}

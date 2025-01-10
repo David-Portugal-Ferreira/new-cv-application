@@ -1,19 +1,25 @@
 import { useState } from "react";
-import "./App.css"
-import PersonalInfo from "./components/PersonalInfo.jsx"
+import "./App.css";
+import PersonalInfo from "./components/PersonalInfo.jsx";
 import FormPersonalInfo from "./components/FormPersonalInfo.jsx";
+import FormEducationalExperience from "./components/FormEducationalExperience.jsx";
 
 function App() {
-    const [personalInfo, setPersonalInfo] = useState({
-      name: "",
-      email: "",
-      phoneNumber: "",
-    });
-    const [educationExperience, setEducationExperience] = useState([]);
-    const [praticalExperience, setPraticalExperience] = useState([]);
+  const [personalInfo, setPersonalInfo] = useState({
+    name: "",
+    email: "",
+    phoneNumber: "",
+  });
+  const [educationExperience, setEducationExperience] = useState({
+    schoolName: "",
+    titleOfStudy: "",
+    startDate: "",
+    endDate: "",
+  });
+  const [praticalExperience, setPraticalExperience] = useState([]);
 
   return (
-    <div className="wrapper">
+    <>
       <div className="forms">
         <FormPersonalInfo
           name={personalInfo.name}
@@ -29,6 +35,36 @@ function App() {
             setPersonalInfo({ ...personalInfo, phoneNumber: e.target.value })
           }
         />
+        <FormEducationalExperience
+          schoolName={educationExperience.schoolName}
+          onChangeSchoolName={(e) =>
+            setEducationExperience({
+              ...educationExperience,
+              schoolName: e.target.value,
+            })
+          }
+          titleOfStudy={educationExperience.titleOfStudy}
+          onChangeTitleOfStudy={(e) =>
+            setEducationExperience({
+              ...educationExperience,
+              titleOfStudy: e.target.value,
+            })
+          }
+          startDate={educationExperience.startDate}
+          onChangeStartDate={(e) =>
+            setEducationExperience({
+              ...educationExperience,
+              startDate: e.target.value,
+            })
+          }
+          endDate={educationExperience.endDate}
+          onChangeEndDate={(e) =>
+            setEducationExperience({
+              ...educationExperience,
+              endDate: e.target.value,
+            })
+          }
+        />
       </div>
       <div className="cv">
         <PersonalInfo
@@ -37,8 +73,8 @@ function App() {
           phone={personalInfo.phoneNumber}
         />
       </div>
-    </div>
+    </>
   );
 }
 
-export default App
+export default App;
