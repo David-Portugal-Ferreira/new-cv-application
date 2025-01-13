@@ -3,6 +3,8 @@ import "./App.css";
 import PersonalInfo from "./components/PersonalInfo.jsx";
 import FormPersonalInfo from "./components/FormPersonalInfo.jsx";
 import FormEducationalExperience from "./components/FormEducationalExperience.jsx";
+import FormPraticalExperience from "./components/FormPraticalExperience.jsx";
+import WorkExperience from "./components/WorkExperience.jsx";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -17,6 +19,8 @@ function App() {
     endDate: "",
   });
   const [praticalExperience, setPraticalExperience] = useState([]);
+
+  console.log(praticalExperience)
 
   return (
     <>
@@ -65,6 +69,16 @@ function App() {
             })
           }
         />
+        <FormPraticalExperience
+          addPraticalExperience={(experince) =>
+            setPraticalExperience([...praticalExperience, experince])
+          }
+          removePraticalExperience={praticalExperience.filter(
+            (experience, id) => experience.id !== id
+          )}
+        >
+          <WorkExperience praticalExperience={praticalExperience} setPraticalExperience={setPraticalExperience}/>
+        </FormPraticalExperience>
       </div>
       <div className="cv">
         <PersonalInfo
