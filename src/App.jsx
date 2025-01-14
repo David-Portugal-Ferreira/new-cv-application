@@ -6,6 +6,7 @@ import FormEducationalExperience from "./components/FormEducationalExperience.js
 import FormPraticalExperience from "./components/FormPraticalExperience.jsx";
 import WorkExperience from "./components/WorkExperience.jsx";
 import Experiences from "./components/Experiences.jsx";
+import Studies from "./components/Studies.jsx";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -89,6 +90,7 @@ function App() {
           email={personalInfo.email}
           phone={personalInfo.phoneNumber}
         />
+        <Studies education={educationExperience} />
         <Experiences praticalExperience={praticalExperience} />
       </div>
     </>

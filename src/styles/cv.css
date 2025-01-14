@@ -17,3 +17,8 @@
 .individualExperience {
     display: block;
 }
+
+.cvEducation {
+    display: flex;
+    flex-direction: column;
+}
