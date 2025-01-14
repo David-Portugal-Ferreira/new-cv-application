@@ -45,10 +45,11 @@ export default function FormPraticalExperience({
           <form onSubmit={handleSubmit}>
             <fieldset>
               <legend>Pratical Experience</legend>
-              <label htmlFor="">
+              <label htmlFor="companyName">
                 Company Name <span>*</span>
               </label>
               <input
+                id="companyName"
                 type="text"
                 value={workExperience.companyName}
                 required
@@ -59,10 +60,11 @@ export default function FormPraticalExperience({
                   })
                 }
               />
-              <label htmlFor="">
+              <label htmlFor="positionTitle">
                 Position Title <span>*</span>
               </label>
               <input
+                id="positionTitle"
                 type="text"
                 value={workExperience.positionTitle}
                 required
@@ -73,10 +75,11 @@ export default function FormPraticalExperience({
                   })
                 }
               />
-              <label htmlFor="">
+              <label htmlFor="responsabilitites">
                 Main Responsabilities <span>*</span>
               </label>
               <input
+                id="responsabilitites"
                 type="text"
                 value={workExperience.mainResponsabilities}
                 required
@@ -87,10 +90,11 @@ export default function FormPraticalExperience({
                   })
                 }
               />
-              <label htmlFor="">
+              <label htmlFor="startDate">
                 Start Date <span>*</span>
               </label>
               <input
+                id="startDate"
                 type="date"
                 value={workExperience.startDate}
                 required
@@ -101,10 +105,11 @@ export default function FormPraticalExperience({
                   })
                 }
               />
-              <label htmlFor="">
+              <label htmlFor="endDate">
                 End Date <span>*</span>
               </label>
               <input
+                id="endDate"
                 type="date"
                 value={workExperience.endDate}
                 required

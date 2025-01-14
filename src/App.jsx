@@ -5,6 +5,7 @@ import FormPersonalInfo from "./components/FormPersonalInfo.jsx";
 import FormEducationalExperience from "./components/FormEducationalExperience.jsx";
 import FormPraticalExperience from "./components/FormPraticalExperience.jsx";
 import WorkExperience from "./components/WorkExperience.jsx";
+import Experiences from "./components/Experiences.jsx";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -19,8 +20,6 @@ function App() {
     endDate: "",
   });
   const [praticalExperience, setPraticalExperience] = useState([]);
-
-  console.log(praticalExperience);
 
   return (
     <>
@@ -90,6 +89,7 @@ function App() {
           email={personalInfo.email}
           phone={personalInfo.phoneNumber}
         />
+        <Experiences praticalExperience={praticalExperience} />
       </div>
     </>
   );

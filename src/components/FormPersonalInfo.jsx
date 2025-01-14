@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/forms.css"
+import "../styles/forms.css";
 
 export default function FormPersonalInfo({
   name,
@@ -24,6 +24,7 @@ export default function FormPersonalInfo({
             Name <span className="required">*</span>
           </label>
           <input
+            id="name"
             type="text"
             value={name}
             onChange={onChangeName}
@@ -35,6 +36,7 @@ export default function FormPersonalInfo({
             Email <span className="required">*</span>
           </label>
           <input
+            id="email"
             type="email"
             value={email}
             onChange={onChangeEmail}
@@ -46,6 +48,7 @@ export default function FormPersonalInfo({
             Phone <span className="required">*</span>
           </label>
           <input
+            id="phone"
             type="number"
             value={phone}
             onChange={onChangePhone}
