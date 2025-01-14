@@ -1,12 +1,14 @@
 import { useState } from "react";
+import "../styles/workExperience.css";
 
 export default function FormPraticalExperience({
   children,
   addPraticalExperience,
-  removePraticalExperience,
+  praticalExperience,
 }) {
   const [addExperience, setAddExperience] = useState(false);
   const [workExperience, setWorkExperience] = useState({
+    id: praticalExperience.length,
     companyName: "",
     positionTitle: "",
     mainResponsabilities: "",
@@ -18,18 +20,19 @@ export default function FormPraticalExperience({
     e.preventDefault();
     setAddExperience(!addExperience);
     addPraticalExperience(workExperience);
-    setWorkExperience({
+    setWorkExperience((prevExperience) => ({
+      id: prevExperience.id + 1,
       companyName: "",
       positionTitle: "",
       mainResponsabilities: "",
       startDate: "",
       endDate: "",
-    });
+    }));
   }
 
   return (
-    <div>
-      <div>{children}</div>
+    <div className="experiences">
+      {children}
       {!addExperience && (
         <input
           type="button"
@@ -42,7 +45,9 @@ export default function FormPraticalExperience({
           <form onSubmit={handleSubmit}>
             <fieldset>
               <legend>Pratical Experience</legend>
-              <label htmlFor="">Company Name</label>
+              <label htmlFor="">
+                Company Name <span>*</span>
+              </label>
               <input
                 type="text"
                 value={workExperience.companyName}
@@ -54,7 +59,9 @@ export default function FormPraticalExperience({
                   })
                 }
               />
-              <label htmlFor="">Position Title</label>
+              <label htmlFor="">
+                Position Title <span>*</span>
+              </label>
               <input
                 type="text"
                 value={workExperience.positionTitle}
@@ -66,7 +73,9 @@ export default function FormPraticalExperience({
                   })
                 }
               />
-              <label htmlFor="">Main Responsabilities</label>
+              <label htmlFor="">
+                Main Responsabilities <span>*</span>
+              </label>
               <input
                 type="text"
                 value={workExperience.mainResponsabilities}
@@ -78,7 +87,9 @@ export default function FormPraticalExperience({
                   })
                 }
               />
-              <label htmlFor="">Start Date</label>
+              <label htmlFor="">
+                Start Date <span>*</span>
+              </label>
               <input
                 type="date"
                 value={workExperience.startDate}
@@ -90,7 +101,9 @@ export default function FormPraticalExperience({
                   })
                 }
               />
-              <label htmlFor="">End Date</label>
+              <label htmlFor="">
+                End Date <span>*</span>
+              </label>
               <input
                 type="date"
                 value={workExperience.endDate}
@@ -102,21 +115,24 @@ export default function FormPraticalExperience({
                   })
                 }
               />
-              <input type="submit" />
-              <input
-                type="button"
-                value={"Cancel"}
-                onClick={() => {
-                  setAddExperience(!addExperience);
-                  setWorkExperience({
-                    companyName: "",
-                    positionTitle: "",
-                    mainResponsabilities: "",
-                    startDate: "",
-                    endDate: "",
-                  });
-                }}
-              />
+              <div className="formButtons">
+                <input type="submit" />
+                <input
+                  type="button"
+                  value={"Cancel"}
+                  onClick={() => {
+                    setAddExperience(!addExperience);
+                    setWorkExperience({
+                      id: praticalExperience.length,
+                      companyName: "",
+                      positionTitle: "",
+                      mainResponsabilities: "",
+                      startDate: "",
+                      endDate: "",
+                    });
+                  }}
+                />
+              </div>
             </fieldset>
           </form>
         </div>

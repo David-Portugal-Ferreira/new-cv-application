@@ -23,7 +23,9 @@ export default function FormEducationalExperience({
       <form onSubmit={saveChanges}>
         <fieldset>
           <legend>Education</legend>
-          <label htmlFor="schoolName">School Name</label>
+          <label htmlFor="schoolName">
+            School Name <span>*</span>
+          </label>
           <input
             id="schoolName"
             type="text"
@@ -32,7 +34,9 @@ export default function FormEducationalExperience({
             value={schoolName}
             onChange={onChangeSchoolName}
           />
-          <label htmlFor="titleOfState">Title of Study</label>
+          <label htmlFor="titleOfState">
+            Title of Study <span>*</span>
+          </label>
           <input
             id="titleOfState"
             type="text"
@@ -41,7 +45,9 @@ export default function FormEducationalExperience({
             value={titleOfStudy}
             onChange={onChangeTitleOfStudy}
           />
-          <label htmlFor="startDate">Start Date</label>
+          <label htmlFor="startDate">
+            Start Date <span>*</span>
+          </label>
           <input
             id="startDate"
             type="date"
@@ -50,7 +56,9 @@ export default function FormEducationalExperience({
             value={startDate}
             onChange={onChangeStartDate}
           />
-          <label htmlFor="endDate">End Date</label>
+          <label htmlFor="endDate">
+            End Date <span>*</span>
+          </label>
           <input
             id="endDate"
             type="date"

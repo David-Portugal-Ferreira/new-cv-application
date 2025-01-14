@@ -20,7 +20,7 @@ function App() {
   });
   const [praticalExperience, setPraticalExperience] = useState([]);
 
-  console.log(praticalExperience)
+  console.log(praticalExperience);
 
   return (
     <>
@@ -70,6 +70,7 @@ function App() {
           }
         />
         <FormPraticalExperience
+          praticalExperience={praticalExperience}
           addPraticalExperience={(experince) =>
             setPraticalExperience([...praticalExperience, experince])
           }
@@ -77,7 +78,10 @@ function App() {
             (experience, id) => experience.id !== id
           )}
         >
-          <WorkExperience praticalExperience={praticalExperience} setPraticalExperience={setPraticalExperience}/>
+          <WorkExperience
+            praticalExperience={praticalExperience}
+            setPraticalExperience={setPraticalExperience}
+          />
         </FormPraticalExperience>
       </div>
       <div className="cv">
