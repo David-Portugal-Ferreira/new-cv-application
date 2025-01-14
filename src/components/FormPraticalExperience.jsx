@@ -78,7 +78,7 @@ export default function FormPraticalExperience({
               <label htmlFor="responsabilitites">
                 Main Responsabilities <span>*</span>
               </label>
-              <input
+              <textarea
                 id="responsabilitites"
                 type="text"
                 value={workExperience.mainResponsabilities}

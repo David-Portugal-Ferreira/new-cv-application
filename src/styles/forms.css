@@ -18,8 +18,8 @@ input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="date"] {
-  max-width: 300px;
-  min-width: 250px;
+  max-width: 350px;
+  min-width: 300px;
   font-size: 16px;
 }
 input[type="submit"],
@@ -30,6 +30,13 @@ input[type="button"] {
   height: 25px;
   font-size: 16px;
   font-weight: bold;
+}
+
+textarea {
+  min-width: 300px;
+  max-width: 350px;
+  min-height: 250px;
+  resize: none;
 }
 
 /* Chrome, Safari, Edge, Opera */
