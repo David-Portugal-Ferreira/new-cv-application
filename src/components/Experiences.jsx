@@ -1,3 +1,5 @@
+import "../styles/cv.css"
+
 export default function Experiences({ praticalExperience }) {
   return (
     <div className="cvExperiences">

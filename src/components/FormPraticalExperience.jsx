@@ -32,6 +32,7 @@ export default function FormPraticalExperience({
 
   return (
     <div className="experiences">
+      <h3>Work Experiences</h3>
       {children}
       {!addExperience && (
         <input

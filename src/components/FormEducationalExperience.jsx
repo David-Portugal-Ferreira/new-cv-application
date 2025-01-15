@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/forms.css"
+import "../styles/forms.css";
 
 export default function FormEducationalExperience({
   schoolName,
@@ -24,54 +24,41 @@ export default function FormEducationalExperience({
         <fieldset>
           <legend>Education</legend>
           <label htmlFor="schoolName">
-            School Name <span>*</span>
+            School Name 
           </label>
           <input
             id="schoolName"
             type="text"
-            disabled={isDisabled}
-            required
             value={schoolName}
             onChange={onChangeSchoolName}
           />
           <label htmlFor="titleOfState">
-            Title of Study <span>*</span>
+            Title of Study 
           </label>
           <input
             id="titleOfState"
             type="text"
-            disabled={isDisabled}
-            required
             value={titleOfStudy}
             onChange={onChangeTitleOfStudy}
           />
           <label htmlFor="startDate">
-            Start Date <span>*</span>
+            Start Date 
           </label>
           <input
             id="startDate"
             type="date"
-            disabled={isDisabled}
-            required
             value={startDate}
             onChange={onChangeStartDate}
           />
           <label htmlFor="endDate">
-            End Date <span>*</span>
+            End Date 
           </label>
           <input
             id="endDate"
             type="date"
-            disabled={isDisabled}
-            required
             value={endDate}
             onChange={onChangeEndDate}
           />
-          {isDisabled ? (
-            <input type="button" value={"Edit"} onClick={saveChanges} />
-          ) : (
-            <input type="submit" value={"Save"} />
-          )}
         </fieldset>
       </form>
     </div>

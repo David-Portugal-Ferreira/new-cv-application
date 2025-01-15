@@ -1,4 +1,4 @@
-import "../styles/workExperience.css"
+import "../styles/forms.css"
 
 export default function WorkExperience({
   praticalExperience,
@@ -16,7 +16,7 @@ export default function WorkExperience({
         {praticalExperience.length > 0 &&
           praticalExperience.map((experience, index) => (
             <li key={index}>
-              {experience.companyName}{" "}
+              <p>{experience.companyName} </p>
               <button onClick={() => removeExperience(experience.id)}>
                 Remove
               </button>

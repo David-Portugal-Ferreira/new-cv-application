@@ -17,50 +17,33 @@ export default function FormPersonalInfo({
 
   return (
     <div>
-      <form onSubmit={saveData}>
+      <form>
         <fieldset>
           <legend>General Information</legend>
-          <label htmlFor="name">
-            Name <span className="required">*</span>
-          </label>
+          <label htmlFor="name">Name</label>
           <input
             id="name"
             type="text"
             value={name}
             onChange={onChangeName}
-            required
-            disabled={editable}
             placeholder="Your Name"
           />
-          <label htmlFor="email">
-            Email <span className="required">*</span>
-          </label>
+          <label htmlFor="email">Email</label>
           <input
             id="email"
             type="email"
             value={email}
             onChange={onChangeEmail}
-            required
-            disabled={editable}
             placeholder="Email"
           />
-          <label htmlFor="phone">
-            Phone <span className="required">*</span>
-          </label>
+          <label htmlFor="phone">Phone</label>
           <input
             id="phone"
             type="number"
             value={phone}
             onChange={onChangePhone}
-            required
-            disabled={editable}
             placeholder="Phone Number"
           />
-          {editable ? (
-            <input type="button" value={"Edit"} onClick={saveData} />
-          ) : (
-            <input type="submit" value={"Save"} />
-          )}
         </fieldset>
       </form>
     </div>

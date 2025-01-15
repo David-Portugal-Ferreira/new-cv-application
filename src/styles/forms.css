@@ -1,6 +1,10 @@
 div {
   display: flex;
   justify-content: center;
+  margin-top: 25px;
+}
+fieldset {
+  border-radius: 5px;
 }
 legend {
   font-size: 20px;
@@ -22,14 +26,24 @@ input[type="date"] {
   min-width: 300px;
   font-size: 16px;
 }
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+  transform: scale(1.05);
+}
+
 input[type="submit"],
 input[type="button"] {
   margin-top: 7px;
   display: block;
-  width: 50px;
+  width: fit-content;
   height: 25px;
   font-size: 16px;
   font-weight: bold;
+  border: 0.5px solid grey;
+  border-radius: 5px;
 }
 
 textarea {
@@ -38,6 +52,51 @@ textarea {
   min-height: 250px;
   resize: none;
 }
+
+.experiences {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 150px;
+}
+.experiences h3 {
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+.individualExperiences {
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 15px;
+    list-style-type: none;
+}
+
+.individualExperiences li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.individualExperiences p {
+    margin: 0px;
+}
+.individualExperiences button {
+    margin-bottom: 10px;
+    height: 25px;
+    border-radius: 5px;
+    border-width: 0.5px;
+}
+
+span{
+    color: red;
+}
+
+.formButtons {
+    display: flex;
+    gap: 10px;
+}
+
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
