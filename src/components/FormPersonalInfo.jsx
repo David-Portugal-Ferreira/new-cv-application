@@ -8,13 +8,9 @@ export default function FormPersonalInfo({
   onChangeEmail,
   phone,
   onChangePhone,
+  aboutMe,
+  onChangeAboutMe,
 }) {
-  const [editable, setEditable] = useState(false);
-  function saveData(e) {
-    e.preventDefault();
-    setEditable(!editable);
-  }
-
   return (
     <div>
       <form>
@@ -44,6 +40,13 @@ export default function FormPersonalInfo({
             onChange={onChangePhone}
             placeholder="Phone Number"
           />
+          <label htmlFor="aboutMe">About Me</label>
+          <textarea
+            name=""
+            id="aboutMe"
+            value={aboutMe}
+            onChange={onChangeAboutMe}
+          ></textarea>
         </fieldset>
       </form>
     </div>

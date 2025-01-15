@@ -4,6 +4,7 @@ import PersonalInfo from "./components/PersonalInfo.jsx";
 import FormPersonalInfo from "./components/FormPersonalInfo.jsx";
 import FormEducationalExperience from "./components/FormEducationalExperience.jsx";
 import FormPraticalExperience from "./components/FormPraticalExperience.jsx";
+import FormPersonalSkills from "./components/FormPersonalSkills.jsx";
 import WorkExperience from "./components/WorkExperience.jsx";
 import Experiences from "./components/Experiences.jsx";
 import Studies from "./components/Studies.jsx";
@@ -13,6 +14,7 @@ function App() {
     name: "",
     email: "",
     phoneNumber: "",
+    aboutMe: "",
   });
   const [educationExperience, setEducationExperience] = useState({
     schoolName: "",
@@ -20,7 +22,10 @@ function App() {
     startDate: "",
     endDate: "",
   });
+  const [personalSkills, setPersonalSkills] = useState([]);
   const [praticalExperience, setPraticalExperience] = useState([]);
+
+  console.log(personalSkills)
 
   return (
     <>
@@ -37,6 +42,10 @@ function App() {
           phone={personalInfo.phoneNumber}
           onChangePhone={(e) =>
             setPersonalInfo({ ...personalInfo, phoneNumber: e.target.value })
+          }
+          aboutMe={personalInfo.aboutMe}
+          onChangeAboutMe={(e) =>
+            setPersonalInfo({ ...personalInfo, aboutMe: e.target.value })
           }
         />
         <FormEducationalExperience
@@ -69,6 +78,10 @@ function App() {
             })
           }
         />
+        <FormPersonalSkills
+          personalSkills={personalSkills}
+          setPersonalSkills={setPersonalSkills}
+        ></FormPersonalSkills>
         <FormPraticalExperience
           praticalExperience={praticalExperience}
           addPraticalExperience={(experince) =>
@@ -89,6 +102,7 @@ function App() {
           name={personalInfo.name}
           email={personalInfo.email}
           phone={personalInfo.phoneNumber}
+          aboutMe={personalInfo.aboutMe}
         />
         <Studies education={educationExperience} />
         <Experiences praticalExperience={praticalExperience} />

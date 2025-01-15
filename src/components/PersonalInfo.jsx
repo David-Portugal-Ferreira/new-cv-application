@@ -1,6 +1,12 @@
 import "../styles/cv.css";
 
-export default function PersonalInfo({ name, email, phone }) {
+export default function PersonalInfo({ name, email, phone, aboutMe }) {
+
+  function writeAboutMe(aboutMe) {
+    const info = aboutMe.split(".")
+    return info.map((i, index) => <p key={index}>{i}</p>)
+  }
+
   return (
     <div className="cvPersonalInfo">
       <h1>{name}</h1>
@@ -22,6 +28,8 @@ export default function PersonalInfo({ name, email, phone }) {
         </span>
         {phone}
       </p>
+      <p className="aboutMe">About Me</p>
+      {writeAboutMe(aboutMe)}
     </div>
   );
 }
