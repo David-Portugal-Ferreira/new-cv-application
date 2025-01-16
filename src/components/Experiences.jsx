@@ -10,8 +10,9 @@ export default function Experiences({ praticalExperience }) {
             <p>Company Name: {experience.companyName}</p>
             <p>Position: {experience.positionTitle}</p>
             <p>Responsabilities: {experience.mainResponsabilities}</p>
-            <p>Start Date: {experience.startDate}</p>
-            <p>End Date: {experience.endDate}</p>
+            <p>
+              From {experience.startDate} To {experience.endDate}
+            </p>
             {praticalExperience.length > 1 && <hr />}
           </div>
         );

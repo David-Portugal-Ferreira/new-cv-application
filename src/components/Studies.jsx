@@ -7,7 +7,7 @@ export default function Studies({ education }) {
       <p>School Name: {education.schoolName}</p>
       <p>Title of Study: {education.titleOfStudy}</p>
       <p>
-          From {education.startDate} to {education.endDate}
+          From {education.startDate} To {education.endDate}
         </p>
     </div>
   );
