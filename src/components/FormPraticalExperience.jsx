@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/workExperience.css";
+import "../styles/forms.css";
 
 export default function FormPraticalExperience({
   children,

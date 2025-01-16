@@ -3,7 +3,6 @@ import { useState } from "react";
 export default function FormPersonalSkills({
   personalSkills,
   setPersonalSkills,
-  children,
 }) {
   const [skill, setSkill] = useState("");
 
@@ -13,21 +12,46 @@ export default function FormPersonalSkills({
     setSkill("");
   }
 
+  function removeSkill(skill) {
+    const newSkillArray = personalSkills.filter((skills) => {
+      return skills !== skill;
+    });
+
+    setPersonalSkills(newSkillArray);
+  }
+
   return (
-    <div>
+    <div className="skills">
       <form onSubmit={addSkill}>
         <fieldset>
           <legend>Personal Skills</legend>
-          <label htmlFor="skills">Skill</label>
+          <label htmlFor="skillInput">Skill</label>
           <input
-            id="skills"
+            id="skillInput"
             type="text"
             value={skill}
             onChange={(e) => setSkill(e.target.value)}
+            required
           />
           <input type="submit" />
         </fieldset>
       </form>
+      <h3>Skills</h3>
+      <div className="displaySkills">
+        {personalSkills.map((skill, index) => {
+          return (
+            <p key={index} className="individualSkill">
+              {skill}{" "}
+              <button
+                className="removeSkill"
+                onClick={() => removeSkill(skill)}
+              >
+                X
+              </button>
+            </p>
+          );
+        })}
+      </div>
     </div>
   );
 }

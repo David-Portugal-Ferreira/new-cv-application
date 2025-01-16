@@ -8,6 +8,7 @@ import FormPersonalSkills from "./components/FormPersonalSkills.jsx";
 import WorkExperience from "./components/WorkExperience.jsx";
 import Experiences from "./components/Experiences.jsx";
 import Studies from "./components/Studies.jsx";
+import Skills from "./components/Skills.jsx";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -24,8 +25,6 @@ function App() {
   });
   const [personalSkills, setPersonalSkills] = useState([]);
   const [praticalExperience, setPraticalExperience] = useState([]);
-
-  console.log(personalSkills)
 
   return (
     <>
@@ -105,6 +104,7 @@ function App() {
           aboutMe={personalInfo.aboutMe}
         />
         <Studies education={educationExperience} />
+        <Skills skills={personalSkills}/>
         <Experiences praticalExperience={praticalExperience} />
       </div>
     </>

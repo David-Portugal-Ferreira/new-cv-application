@@ -9,6 +9,7 @@
     justify-content: flex-start;
 }
 .cv {
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -17,5 +18,11 @@
 @media print {
     .forms {
         display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .forms {
+        align-items: center;
     }
 }
