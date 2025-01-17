@@ -3,7 +3,7 @@ import "../styles/cv.css";
 export default function PersonalInfo({ name, email, phone, aboutMe }) {
 
   function writeAboutMe(aboutMe) {
-    const info = aboutMe.split(".")
+    const info = aboutMe.split("\n")
     return info.map((i, index) => <p key={index}>{i}</p>)
   }
 
@@ -28,8 +28,14 @@ export default function PersonalInfo({ name, email, phone, aboutMe }) {
         </span>
         {phone}
       </p>
-      <p className="aboutMe">About Me</p>
-      {writeAboutMe(aboutMe)}
+      {aboutMe.length > 0 ? (
+        <>
+          <p className="aboutMe">About Me</p>
+          {writeAboutMe(aboutMe)}
+        </>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

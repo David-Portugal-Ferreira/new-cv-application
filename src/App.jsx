@@ -25,7 +25,7 @@ function App() {
   });
   const [personalSkills, setPersonalSkills] = useState([]);
   const [praticalExperience, setPraticalExperience] = useState([]);
-
+  
   return (
     <>
       <div className="forms">
@@ -104,7 +104,7 @@ function App() {
           aboutMe={personalInfo.aboutMe}
         />
         <Studies education={educationExperience} />
-        <Skills skills={personalSkills}/>
+        {personalSkills.length > 0 && <Skills skills={personalSkills} />}
         <Experiences praticalExperience={praticalExperience} />
       </div>
     </>

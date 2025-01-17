@@ -1,4 +1,4 @@
-import "../styles/forms.css"
+import "../styles/forms.css";
 
 export default function WorkExperience({
   praticalExperience,
@@ -6,20 +6,25 @@ export default function WorkExperience({
 }) {
   function removeExperience(id) {
     const updatedExperiences = praticalExperience.filter((experience) => {
-        return experience.id !== id;
+      return experience.id !== id;
     });
-    setPraticalExperience(updatedExperiences)
+    setPraticalExperience(updatedExperiences);
   }
   return (
-    <div>
+    <div className="workExperiences">
       <ul className="individualExperiences">
         {praticalExperience.length > 0 &&
           praticalExperience.map((experience, index) => (
             <li key={index}>
-              <p>{experience.companyName} </p>
-              <button onClick={() => removeExperience(experience.id)}>
-                Remove
-              </button>
+              <p>
+                {experience.companyName}{" "}
+                <button
+                  className="removeExperience"
+                  onClick={() => removeExperience(experience.id)}
+                >
+                  X
+                </button>
+              </p>
             </li>
           ))}
       </ul>

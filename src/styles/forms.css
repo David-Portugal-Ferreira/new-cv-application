@@ -1,7 +1,17 @@
 div {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
+  margin-top: 50px;
+}
+div.workExperiences,
+div.displaySkills {
+  margin-top: 10px;
+}
+.displaySkills {
+  display: flex;
+  /*width: 90%;*/
+  flex-wrap: wrap;
+  gap: 15px;
 }
 fieldset {
   border-radius: 5px;
@@ -36,14 +46,22 @@ input[type="date"]:focus {
 
 input[type="submit"],
 input[type="button"] {
+  box-sizing: content-box;
   margin-top: 7px;
+  padding: 8px;
   display: block;
   width: fit-content;
-  height: 25px;
   font-size: 16px;
   font-weight: bold;
   border: 0.5px solid grey;
-  border-radius: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: #0d6efd;
+}
+
+input[type="button"].cancelFormSubmition {
+  background-color: #dc3545;
 }
 
 textarea {
@@ -54,47 +72,56 @@ textarea {
 }
 
 .experiences {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 150px;
 }
 .experiences h3 {
   margin-top: 25px;
   margin-bottom: 0;
 }
 .individualExperiences {
-    margin: 0px;
-    padding: 0px;
-    margin-bottom: 15px;
-    list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 15px;
+  list-style-type: none;
 }
 
 .individualExperiences li {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.individualExperiences li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .individualExperiences p {
-    margin: 0px;
+  margin: 0px;
 }
-.individualExperiences button {
-    margin-bottom: 10px;
-    height: 25px;
-    border-radius: 5px;
-    border-width: 0.5px;
+.individualExperience button {
+  margin-bottom: 10px;
+  height: 25px;
+  border-radius: 5px;
+  border-width: 0.5px;
 }
 
-span{
-    color: red;
+span {
+  color: red;
 }
 
 .formButtons {
-    display: flex;
-    gap: 10px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
 }
 
 .skills {
@@ -109,27 +136,23 @@ span{
   margin-top: 30px;
 }
 
-.displaySkills {
-  display: flex;
-  width: 90%;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.individualSkill {
+.individualSkill,
+.individualExperiences p {
+  padding: 5px;
   border: 1px solid black;
   border-radius: 10px;
   margin: 0;
 }
 
-.removeSkill {
+.removeSkill,
+.removeExperience {
   background-color: white;
   border: none;
 }
-.removeSkill:hover {
+.removeSkill:hover,
+.removeExperience:hover {
   color: red;
 }
-
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

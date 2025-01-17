@@ -33,25 +33,29 @@ export default function FormPersonalSkills({
             onChange={(e) => setSkill(e.target.value)}
             required
           />
-          <input type="submit" />
+          <input type="submit" value={"Add"}/>
         </fieldset>
       </form>
-      <h3>Skills</h3>
-      <div className="displaySkills">
-        {personalSkills.map((skill, index) => {
-          return (
-            <p key={index} className="individualSkill">
-              {skill}{" "}
-              <button
-                className="removeSkill"
-                onClick={() => removeSkill(skill)}
-              >
-                X
-              </button>
-            </p>
-          );
-        })}
-      </div>
+      {personalSkills.length > 0 && (
+        <>
+          <h3>Skills</h3>
+          <div className="displaySkills">
+            {personalSkills.map((skill, index) => {
+              return (
+                <p key={index} className="individualSkill">
+                  {skill}{" "}
+                  <button
+                    className="removeSkill"
+                    onClick={() => removeSkill(skill)}
+                  >
+                    X
+                  </button>
+                </p>
+              );
+            })}
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -32,8 +32,6 @@ export default function FormPraticalExperience({
 
   return (
     <div className="experiences">
-      <h3>Work Experiences</h3>
-      {children}
       {!addExperience && (
         <input
           type="button"
@@ -122,10 +120,11 @@ export default function FormPraticalExperience({
                 }
               />
               <div className="formButtons">
-                <input type="submit" />
+                <input type="submit" value={"Add"} />
                 <input
                   type="button"
                   value={"Cancel"}
+                  className="cancelFormSubmition"
                   onClick={() => {
                     setAddExperience(!addExperience);
                     setWorkExperience({
@@ -142,6 +141,12 @@ export default function FormPraticalExperience({
             </fieldset>
           </form>
         </div>
+      )}
+      {praticalExperience.length > 0 && (
+        <>
+          <h3>Work Experiences</h3>
+          {children}
+        </>
       )}
     </div>
   );

@@ -1,10 +1,10 @@
-.cvExperiences {
+.cvPersonalInfo,
+.cvExperiences,
+.cvEducation,
+.cvPersonalSkills {
     display: flex;
     flex-direction: column;
-}
-.cvPersonalInfo {
-    display: flex;
-    flex-direction: column;
+    margin-top: 10px;
 }
 .cvPersonalInfo p {
     margin: 0;
@@ -20,13 +20,9 @@
     height: auto;
 }
 
-.individualExperience {
+.cvIndividualExperience {
     display: block;
-}
-
-.cvEducation {
-    display: flex;
-    flex-direction: column;
+    margin-top: 10px;
 }
 
 .cvEducation h2,
@@ -41,11 +37,7 @@
     font-weight: bold;
 }
 
-.personalSkills {
-    display: flex;
-    flex-direction: column;
-}
-.individualSkills {
+.cvIndividualSkills {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -54,7 +46,7 @@
     margin-top: 0;
 }
 
-.individualSkill {
+.cvIndividualSkill {
     border: 1px solid black;
     padding: 10px;
     border-radius: 15px;

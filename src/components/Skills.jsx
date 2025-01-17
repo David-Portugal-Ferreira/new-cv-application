@@ -2,12 +2,12 @@ import "../styles/cv.css"
 
 export default function Skills({ skills }) {
     return (
-      <div className="personalSkills">
+      <div className="cvPersonalSkills">
         <h2>Skills</h2>
-        <div className="individualSkills">
+        <div className="cvIndividualSkills">
           {skills.map((skill, index) => {
             return (
-              <p key={index} className="individualSkill">
+              <p key={index} className="cvIndividualSkill">
                 {skill}
               </p>
             );
