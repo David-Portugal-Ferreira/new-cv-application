@@ -45,7 +45,8 @@ input[type="date"]:focus {
 }
 
 input[type="submit"],
-input[type="button"] {
+input[type="button"],
+.saveAsPdf {
   box-sizing: content-box;
   margin-top: 7px;
   padding: 8px;
@@ -58,6 +59,9 @@ input[type="button"] {
   cursor: pointer;
   color: white;
   background-color: #0d6efd;
+}
+.saveAsPdf {
+  margin-bottom: 150px;
 }
 
 input[type="button"].cancelFormSubmition {
@@ -75,7 +79,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 150px;
+  margin-bottom: 30px;
 }
 .experiences h3 {
   margin-top: 25px;

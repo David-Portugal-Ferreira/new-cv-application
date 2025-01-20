@@ -25,7 +25,12 @@ function App() {
   });
   const [personalSkills, setPersonalSkills] = useState([]);
   const [praticalExperience, setPraticalExperience] = useState([]);
-  
+
+  const handleDownloadPdf = () => {
+    document.title = "cv";
+    window.print();
+  };
+
   return (
     <>
       <div className="forms">
@@ -95,6 +100,9 @@ function App() {
             setPraticalExperience={setPraticalExperience}
           />
         </FormPraticalExperience>
+        <button className="saveAsPdf" onClick={handleDownloadPdf}>
+          Download PDF
+        </button>
       </div>
       <div className="cv">
         <PersonalInfo
