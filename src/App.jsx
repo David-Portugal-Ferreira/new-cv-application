@@ -27,9 +27,20 @@ function App() {
   const [praticalExperience, setPraticalExperience] = useState([]);
 
   const handleDownloadPdf = () => {
-    document.title = "cv";
+    document.title = "my_cv";
     window.print();
+    document.title = "Build Your CV Online"
   };
+
+  const todayDate = new Date();
+  const maxDate = () => {
+    let month = null;
+    if (todayDate.getMonth() + 1 < 10) {
+      month = `0${todayDate.getMonth() + 1}`;
+    }
+    return `${todayDate.getFullYear()}-${month}-${todayDate.getDate()}`;
+  };
+  const date = maxDate();
 
   return (
     <>
@@ -81,6 +92,7 @@ function App() {
               endDate: e.target.value,
             })
           }
+          todayDate={date}
         />
         <FormPersonalSkills
           personalSkills={personalSkills}
@@ -94,6 +106,7 @@ function App() {
           removePraticalExperience={praticalExperience.filter(
             (experience, id) => experience.id !== id
           )}
+          todayDate={date}
         >
           <WorkExperience
             praticalExperience={praticalExperience}

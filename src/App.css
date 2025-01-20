@@ -13,6 +13,9 @@
 }
 
 @media print {
+  @page {
+    margin: 0;
+  }
   .cv {
     margin: 50px 100px ;
     width: 100%;

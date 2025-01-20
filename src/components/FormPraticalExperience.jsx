@@ -5,6 +5,7 @@ export default function FormPraticalExperience({
   children,
   addPraticalExperience,
   praticalExperience,
+  todayDate,
 }) {
   const [addExperience, setAddExperience] = useState(false);
   const [workExperience, setWorkExperience] = useState({
@@ -95,6 +96,7 @@ export default function FormPraticalExperience({
               <input
                 id="startDate"
                 type="date"
+                max={todayDate}
                 value={workExperience.startDate}
                 required
                 onChange={(e) =>
@@ -110,6 +112,7 @@ export default function FormPraticalExperience({
               <input
                 id="endDate"
                 type="date"
+                max={todayDate}
                 value={workExperience.endDate}
                 required
                 onChange={(e) =>

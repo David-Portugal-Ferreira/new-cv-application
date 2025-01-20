@@ -15,10 +15,8 @@ export default function Experiences({ praticalExperience }) {
           <div key={index} className="cvIndividualExperience">
             <p>Company Name: {experience.companyName}</p>
             <p>Position: {experience.positionTitle}</p>
-            <p>
-              Responsabilities:{" "}
-              {writeResponsabilities(experience.mainResponsabilities)}
-            </p>
+            <p>Responsabilities: </p>
+            {writeResponsabilities(experience.mainResponsabilities)}
             <p>
               From {experience.startDate} To {experience.endDate}
             </p>
